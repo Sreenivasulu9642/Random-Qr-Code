@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(148, 138, 138);
+ margin-left:35%;
+   margin-top: 10%;
+    }
+    #container{
+        width: 50%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+       
+       
+        
+       
+    }
+    #input{
+        margin-top: 20px;
+        margin-left: 20px;
+       width: 90%;
+       height: 30px;
+       padding-left: 30px;
+       font-size: 20px;
+      border: 1px solid;
+      border-radius: 5px;
+       box-shadow: 0px 0px 10px 0px white;
+       outline: none;
+        margin-right: 20px;
+    }
+    #qr-container{
+        text-align: center;
+        margin-top: 20px;
+       
+       
+       
+    }
+    #btn{
+        margin-top: 10px;
+      margin-left:180px;
+      width: 100px;
+      height: 40px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      background-color: orangered;
+      color: white;
+
+    }
+    #img{
+       
+    }
+    .increase{
+        height: 100px !important;
+        width: 100px;
+        
+    }
+   
+</style>
+<body>
+    <div id="container">
+        <input type="text" id="input">
+        <div id="qr-container">
+            <img src="" id="img">
+        </div>
+      <button id="btn">Get Qr Code</button>
+    </div>
+
+    <script>
+        let input=document.getElementById('input');
+        let qrCode=document.getElementById('img');
+        let btn=document.getElementById('btn');
+
+        btn.onclick=getqrcode;
+
+
+        function getqrcode()
+        {
+            if(input.value!='')
+        {
+
+            let qr=' https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+input.value;
+            qrCode.setAttribute('class','increase');
+             
+            qrCode.src=qr;
+        }
+        else
+        {
+          
+          
+        }
+        }
+    </script>
+</body>
+</html>
